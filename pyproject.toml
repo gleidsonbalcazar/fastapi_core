@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "nd_saas_backend"
+version = "0.1.0"
+description = "Clean Architecture project"
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry>=1.0"]
+build-backend = "poetry.core.masonry.api"
