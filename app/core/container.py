@@ -2,6 +2,7 @@ from dependency_injector import containers, providers
 from fastapi import Request
 
 from app.core.config import settings
+from app.infrastructure.adapters.opensearch_adapter import OpenSearchAdapter
 from app.infrastructure.cache.redis import RedisClient
 from sqlalchemy.orm import Session
 
@@ -14,3 +15,6 @@ class Container(containers.DeclarativeContainer):
     config = providers.Configuration()
     db = providers.Dependency(instance_of=Session)
     redis_client = providers.Singleton(RedisClient, redis_url=settings.REDIS_URL)
+    open_search_port = providers.Factory(
+        OpenSearchAdapter,
+    )

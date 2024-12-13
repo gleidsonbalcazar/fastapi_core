@@ -57,7 +57,9 @@ def setup_exception_handlers(app: FastAPI):
 
 def setup_dependency_injection(app: FastAPI):
     container = Container()
-    container.wire(modules=[])
+    container.wire(modules=[
+        "app.middlewares.unified_middleware"
+    ])
     app.container = container
 
 

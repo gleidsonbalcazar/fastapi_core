@@ -36,6 +36,7 @@ class Settings(BaseSettings):
     S3_BUCKET_NAME: str = ""
 
     LOGGING_LEVEL: str = "INFO"
+    GLOBAL_RATE_LIMIT: int = 100
 
     OPENSEARCH_URL: str = ""
     OPENSEARCH_PORT: int = Field(9200, env="OPENSEARCH_PORT")
